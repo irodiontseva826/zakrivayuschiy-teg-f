@@ -272,7 +272,6 @@
 
 .button__text {
   position: relative;
-  color: var(--accent-color);
   color: var(--button-text-color);
   font-family: var(--accent-font);
   font-size: 14px;
