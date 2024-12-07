@@ -17,8 +17,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="main-title">&lt;/HTML&gt;</h1>
-      <p class="main-subtitle">закрывающий тег</p>
+      <a class="logo">&lt;/HTML&gt;</a>
+      <h1 class="main-title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -560,8 +560,6 @@
           </article>
         </li>
       </ul>
-    </main>
-    <footer class="footer">
       <button
         class="button button_type_save"
         type="button"
@@ -579,7 +577,7 @@
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
-    </footer>
+    </main>
     <dialog id="dialog-id" class="dialog">
       <div class="dialog__descripition">
         <svg
@@ -595,13 +593,14 @@
           Вставьте дискету, чтобы продолжить
         </p>
       </div>
-      <button
-        type="button"
-        class="button button_type_close"
-        onclick="window['dialog-id'].close()"
-      >
-        <span class="button__text">ок</span>
-      </button>
+      <form method="dialog">
+        <button
+          type="submit"
+          class="button button_type_close"
+        >
+          <span class="button__text">ок</span>
+        </button>
+      </form>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>

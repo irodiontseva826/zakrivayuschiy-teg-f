@@ -20,6 +20,7 @@
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
+  background-attachment: fixed; 
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--card-text-font-weight);
@@ -39,12 +40,12 @@
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 }
 
-.main-title {
+.logo {
   margin-block-end: 20px;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
-.main-subtitle {
+.main-title {
   margin-block-end: 25px;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
@@ -80,6 +81,7 @@
   content: "▶";
   position: absolute;
   animation: arrow 0.5s ease-in-out infinite alternate;
+  inset-inline-start: -20px;
 }
 
 .theme-menu__button::after {
@@ -110,6 +112,9 @@
 }
 
 .cards {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 100px;
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 }
 
@@ -147,8 +152,12 @@
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 1;
-  text-shadow: 1px var(--lable-stroke);
-  inset-block-start: 25px;
+  text-shadow: 
+    -1px 0 var(--lable-stroke), 
+    0 1px var(--lable-stroke), 
+    1px 0 var(--lable-stroke), 
+    0 -1px var(--lable-stroke);
+  inset-block-start: 23px;
   inset-inline-end: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
   mix-blend-mode: hard-light;
 }
@@ -204,7 +213,7 @@
 }
 
 .card__text-paragraph {
-  line-height: 1.173;
+  line-height: 1.185;
 }
 
 .card__buttons {
@@ -217,11 +226,13 @@
 
 .card__icon-button {
   display: flex;
+  justify-content: center;
   align-items: center;
   border: 2px solid transparent;
   background-color: transparent;
   transition: border-color 0.3s ease;
   cursor: pointer;
+  max-block-size: 37.8px;
 }
 
 .card__icon-button:focus {
@@ -234,9 +245,12 @@
 
 .button {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid var(--accent-color);
   padding: 11px;
-  background-color: transparent;
+  background-color: var(--bg-color);
   cursor: pointer;
 }
 
@@ -264,9 +278,6 @@
 }
 
 .card__like-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-inline-size: 130px;
 }
 
@@ -279,20 +290,10 @@
   mix-blend-mode: difference;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  margin-block-start: 49px;
-  margin-block-end: 100px;
-}
-
 .button_type_save {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 8px;
+  margin: 49px auto 0;
   padding: 15px 20px;
-  background-color: var(--bg-color);
 }
 
 .floppy {
@@ -342,9 +343,6 @@
 }
 
 .button_type_close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-transform: uppercase;
   inline-size: 100%;
 }
@@ -352,6 +350,10 @@
 @media (width < 376px) {
   .cards__list {
     gap: 49px;
+  }
+
+  .card__text-paragraph {
+    line-height: 1.18;
   }
 
   .button_type_save {
